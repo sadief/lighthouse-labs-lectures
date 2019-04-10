@@ -42,7 +42,10 @@
 |**U**pdate | PUT/PATCH        | /cows/:id
 |**D**elete | DELETE           | /cows/:id/delete
 
-**NOTE:** Browsers only support `GET` and `POST` actions from pure HTTP forms. To use `PUT`/`PATCH`/`DELETE` you'll either need to use client-side JS or the [`method-override`](http://expressjs.com/en/resources/middleware/method-override.html) middleware.
+
+Forms are only able to send GET or POST requests, so (rather counter-intuitively) we have to use POST for our Update and Delete actions.
+
+More on [Forms](https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/Sending_and_retrieving_form_data).
 
 ### Morgan: Server-side Logging 
 
