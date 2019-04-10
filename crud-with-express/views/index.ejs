@@ -1,0 +1,32 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Counting Cows</title>
+</head>
+
+<body>
+
+    <h1> Let's count some cows</h1>
+        How many cows can we count
+
+
+    <ul>
+        <% if(cows) { %>
+            <% for (let id in cows) { %>
+                <li>
+                    <h3>
+                     <%= id %>
+                     -
+                     <%= cows[id] %>
+                    </h3>
+                </li>
+            <% } %>
+        <% } %>
+    </ul>
+
+
+</body>
+
+
+</html>

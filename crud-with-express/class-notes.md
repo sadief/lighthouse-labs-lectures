@@ -1,22 +1,33 @@
 # W2D3 CRUD with Express
 
+We made a Cow CRUD app!
+Link to Repo
 
 ## What is Express?
-
+A framework designed to make easier to create routes
 
 ## What does CRUD stand for?
 
-    C
-    R
-    U
-    D
+    C Create `/cows/new`
+    R Read `/cows` `/cows/:id` 
+    U Update `/cows/:id`
+    D Delete `/cows/:id/delete`
+
+    BREAD
+    browse, read, edit, add, delete
 
 
 ## Goals for today
+ - Perform all CRUD actions upon given data
+ - Use forms to submit http requests
+
+ I want to be able to access a bunch of data and perform particular actions on it and I want to do that through a web interface.
+
+ Let's make a cow CRUD app
 
 
 ## What is EJS?
-
+A templating language that lets you generate HTML with Javascript
 
 ## HTTP requests
 
