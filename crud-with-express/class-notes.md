@@ -2,7 +2,7 @@
 
 We made a Cow CRUD app!
 
-[Link](https://github.com/sadief/lighthouse-labs-lectures/tree/april-10-19) to Repo
+[Link](https://github.com/sadief/lighthouse-labs-lectures/tree/april-10-19/crud-with-express) to Repo
 
 ## What is Express?
 A framework designed to make easier to create routes
