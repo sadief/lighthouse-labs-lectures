@@ -7,3 +7,7 @@ The main branch is starter code and then for each lecture there is a branch for 
 ## CRUD with Express
     - Cow CRUD app
     - Class notes
+
+## Learning New Languages Ft. Golang
+    - Chatty Gopher App
+    - Class notes
