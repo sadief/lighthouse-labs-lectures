@@ -25,7 +25,7 @@
             output.innerHTML += "Status: Connected\n";
         }
 
-        socket.onMessage = function (e) {
+        socket.onmessage = function (e) {
             output.innerHTML += "Server: " + e.data + "\n"
         }
 
