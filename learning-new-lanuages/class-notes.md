@@ -1,9 +1,9 @@
 # W9D1 Learning a new Language/Framework on the Job
 # Ft. Golang
 
-Today we talked about Golang but with the context of how to learn a new language when you're on the job.
+I guarantee that there will be something in your new dev job that is strange an unfamiliar. Whether that's a language, framework or piece of technology that you've never worked with before, the point is that Lighthouse has set you up to be able to learn on your feet quickly. Here's some tips for approaching this in a new job. I've used Go as an example, partly because it's a pretty cool language, and partly because it's the language I had to learn on the job.
 
-The recording will be updated at some point today - I just need to stitch it together and upload due to the laptop crashes.
+The recording will be updated at some point today - I just need to stitch the videos together and upload due to the laptop crashes.
 
 Also, the bug we saw at the very end was down to this:
 
