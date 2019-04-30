@@ -1,6 +1,8 @@
 # W9D1 Learning a new Language/Framework on the Job
 # Ft. Golang
 
+Link to repo with notes [here](https://github.com/sadief/lighthouse-labs-lectures/tree/april-29-19/learning-new-lanuages)
+
 I guarantee that there will be something in your new dev job that is strange an unfamiliar. Whether that's a language, framework or piece of technology that you've never worked with before, the point is that Lighthouse has set you up to be able to learn on your feet quickly. Here's some tips for approaching this in a new job. I've used Go as an example, partly because it's a pretty cool language, and partly because it's the language I had to learn on the job.
 
 The recording will be updated at some point today - I just need to stitch the videos together and upload due to the laptop crashes.
