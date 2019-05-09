@@ -11,3 +11,7 @@ The main branch is starter code and then for each lecture there is a branch for 
 ## Learning New Languages Ft. Golang
     - Chatty Gopher App
     - Class notes
+
+## User Authentication
+    - Cookie Monster App
+    - Class notes
