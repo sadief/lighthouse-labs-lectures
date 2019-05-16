@@ -15,8 +15,8 @@ MongoClient.connect(MONGODB_URI, (err, db) => {
     }
     console.log(`Connected to mongodb: ${MONGODB_URI}`);
 
-    app.get('/', (req, res) => {
-        db.collection('people_in_space').find().toArray((err, people) => {
+    app.get('/people', (req, res) => {
+        db.collection('people').find().toArray((err, people) => {
             let templateVars = {
                 numberOfPeople: people.length,
                 people: people,
@@ -26,20 +26,20 @@ MongoClient.connect(MONGODB_URI, (err, db) => {
     })
 
 
-    app.post('/new', (req, res) => {
+    app.post('/people/new', (req, res) => {
         var newPerson = {
             name: req.body.name,
             craft: req.body.craft
         }
-        db.collection('people_in_space').insertOne(newPerson, function (err, id) {
-            res.redirect('/')
+        db.collection('people').insertOne(newPerson, function (err, id) {
+            res.redirect('/people')
         })
     })
 
 
-    app.post('/:id/delete', (req, res) => {
-        db.collection('people_in_space').remove({ _id: ObjectId(req.params.id) }, function (err, result) {
-            res.redirect('/')
+    app.post('/people/:id/delete', (req, res) => {
+        db.collection('people').remove({ _id: ObjectId(req.params.id) }, function (err, result) {
+            res.redirect('/people')
         })
     })
 })

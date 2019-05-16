@@ -16,7 +16,7 @@
 
         <h2>Send someone to Space!</h2>
         
-        <form action="/new" method="POST">
+        <form action="/people/new" method="POST">
             <input placeholder="Craft" type="text" name="craft">
             <input placeholder="Name" type="text" name="name">
             <button type="submit">Add</button>
@@ -28,7 +28,7 @@
     <% for (var key in people) {%>
 
         <p><%= people[key].name %> - <%= people[key].craft%></p>
-        <form action="/<%=people[key]._id%>/delete" method="POST">
+        <form action="/people/<%=people[key]._id%>/delete" method="POST">
             <button type="submit">Delete</button>
         </form>
 

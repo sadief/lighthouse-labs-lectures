@@ -12,7 +12,7 @@ MongoClient.connect(MONGODB_URI, (err, db) => {
     console.log(`Connected to mongodb: ${MONGODB_URI}`);
 
     function getPeople(callback) {
-        db.collection("people_in_space").find().toArray(callback);
+        db.collection("people").find().toArray(callback);
     }
 
     getPeople((err, people) => {
