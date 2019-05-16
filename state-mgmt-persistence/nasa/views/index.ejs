@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>NASA</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+    <h1>People in Space</h1>
+        <p><%=numberOfPeople%></p>
+
+    <h2>Send someone to space</h2>
+    <form action="/people" method="POST">
+        <input type="text" name="craft" placeholder="craft">
+        <input type="text" name="name" placeholder="name">
+        <button type="submit">Add</button>
+    </form>
+    <h2>Names</h2>
+    <% for (var key in people) {%>
+
+    <p><%=people[key].name%></p>
+    <form action="/people/<%=people[key]._id%>/delete" method="POST">
+    <button type="submit">Delete</button>
+    </form>
+
+    <%}%>
+
+</body>
+
+</html>
