@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link href="https://fonts.googleapis.com/css?family=Cinzel+Decorative:400,700,900&display=swap" rel="stylesheet">
+    <title>GoT Characters</title>
+</head>
+<body>
+    <div>
+        <header>
+            <h1><a href="/"><%=name%></a></h1>
+        </header>
+        <div class="container">
+            <h2>These people have resided at <%=name%></h2>
+                <div class="container-items">
+                    <% for (var i = 0; i < characters.length; i++) {%>
+                        <h4>
+                            <%= characters[i] %>
+                        <form action="/characters/<%=characters[i].id%>/delete" method="POST">
+                            <button type="submit">Delete</button>
+                        </form>
+                        </h4>
+                    <% } %>
+               </div>
+        </div>
+    </div>
+</body>
+</html>

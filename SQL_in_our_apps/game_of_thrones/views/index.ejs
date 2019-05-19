@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link href="https://fonts.googleapis.com/css?family=Cinzel+Decorative:400,700,900&display=swap" rel="stylesheet">
+    <title>Game of Thrones</title>
+</head>
+<body>
+    <div>
+        <header>
+            <h1><a href="/">Game of Thrones</a></h1>
+        </header>
+            <p>A place to keep track of all of your favorite characters.</p>
+        <div class="new-character">
+            <a href="/characters/new"><button>ADD CHARACTER</button></a>
+        </div>
+        <div class="container">
+            <h2>Castles:</h2>
+                <div class="container-items">
+                    <% for (castle of castles) {%>
+                        <h4>
+                            <a href=<%= `characters/${castle.id}` %>><%= castle.name %></a>
+                        </h4>
+                    <% } %>
+               </div>
+        </div>
+    </div>
+</body>
+</html>
