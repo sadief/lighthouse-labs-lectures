@@ -1,17 +1,14 @@
 var express = require('express');
 var router = express.Router();
 
-const characters = [
-    { id: 1, name: "Ned", castle: "Winterfell" },
-    { id: 2, name: "Arya", castle: "Winterfell" },
-    { id: 3, name: "Sansa", castle: "Winterfell" },
-    { id: 4, name: "Ghost", castle: "Winterfell" },
-    { id: 5, name: "Cersei", castle: "Winterfell" },
-    { id: 6, name: "Jaime", castle: "Winterfell" },
-    { id: 7, name: "The Mountain", castle: "Winterfell" },
-    { id: 8, name: "Margery Tyrell", castle: "Winterfell" }
+const { Client } = require('pg')
+const client = new Client({
+    database: 'got'
+})
 
-]
+client.connect()
+const { getCharacterById, updateCharacterById } = require('../data/data-characters')(client);
+
 
 router.get('/new', function (req, res, next) {
     res.render('character_new');
@@ -22,29 +19,38 @@ router.post('/', function (req, res, next) {
 });
 
 router.get('/:id/edit', function (req, res, next) {
-    let foundCharacter = characters.filter(character => character.id == req.params.id)[0];
-
-    let templateVars = {
-        id: req.params.id,
-        name: foundCharacter.name,
-        castle: foundCharacter.castle
-    }
-    res.render('character_edit', templateVars);
+    getCharacterById(req.params.id, (err, char) => {
+        if (err) {
+            console.log('ERR:', err)
+        } else {
+            console.log("Char", char)
+            res.render('character_edit', {
+                id: char.id,
+                name: char.name,
+                castle: char.castle
+            })
+        }
+    })
 });
 
 router.get('/:id', function (req, res, next) {
-    let foundCharacter = characters.filter(character => character.id == req.params.id)[0];
-
-    let templateVars = {
-        id: req.params.id,
-        name: foundCharacter.name,
-        castle: foundCharacter.castle
-    }
-    res.render('character', templateVars);
+    getCharacterById(req.params.id, (err, char) => {
+        if (err) {
+            console.log('ERR:', err)
+        } else {
+            res.render('character', {
+                id: char.id,
+                name: char.name,
+                castle: char.castle
+            })
+        }
+    })
 });
 
 router.post('/:id/edit', function (req, res, next) {
-    res.redirect(`/characters/${req.params.id}/edit`);
+    updateCharacterById(req.params.id, { castle: req.body.castle }, (err, updatedCharacter) => {
+        res.redirect(`/characters/${req.params.id}/edit`);
+    })
 });
 
 router.post('/:id/delete', function (req, res, next) {
