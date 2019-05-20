@@ -11,18 +11,21 @@
 <body>
     <div>
         <header>
-            <h1><a href="/"><%=name%></a></h1>
+            <h1>Edit character</h1>
         </header>
         <div class="container">
-            <h2>of <%=castle%></h2>
-            <div class="container-items">
-                <form action="/characters/<%=id%>/edit" method="POST">
-                    <button type="submit">Edit</button>
-                </form>
-                <form action="/characters/<%=id%>/delete" method="POST">
-                    <button type="submit">Delete</button>
-                </form>
-            </div>
+            <form action="characters/<%=id%>/edit" method="POST">
+            <textarea
+                type="text"
+                name="castle"
+                placeholder=<%=castle%>
+            ></textarea>
+            <textarea
+                name="character"
+                placeholder=<%=name%>
+            ></textarea>         
+            <button type="submit">Save</button> 
+            </form> 
         </div>
     </div>
 </body>

@@ -18,11 +18,10 @@
             <a href="/characters/new"><button>ADD CHARACTER</button></a>
         </div>
         <div class="container">
-            <h2>Castles:</h2>
                 <div class="container-items">
-                    <% for (castle of castles) {%>
+                    <% for (var i = 0; i < characters.length; i++) {%>
                         <h4>
-                            <a href=<%= `characters/${castle.id}` %>><%= castle.name %></a>
+                            <a href=<%= `characters/${characters[i].id}` %>><%= characters[i].name %></a>
                         </h4>
                     <% } %>
                </div>

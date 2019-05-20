@@ -55,12 +55,13 @@ h4 {
     padding: 2rem;
 }
 
-h2 {
+h2, h3 {
     color:#cbdcea;
 }
 
 .container-items {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     width: 100%;
 }

@@ -1,22 +1,16 @@
 var express = require('express');
 var router = express.Router();
 
-const castles = [
-    {
-        id: 1,
-        name: "Winterfell",
-        characters: { "Ned", "Arya", "Sansa", "Jon"}
-    },
-    {
-        id: 2,
-        name: "The Red Keep",
-        characters: ["Cersei", "Jaime", "The Mountain"]
-    },
-    {
-        id: 3,
-        name: "Highgarden",
-        characters: ["Margery Tyrell"]
-    },
+const characters = [
+    { id: 1, name: "Ned", castle: "Winterfell" },
+    { id: 2, name: "Arya", castle: "Winterfell" },
+    { id: 3, name: "Sansa", castle: "Winterfell" },
+    { id: 4, name: "Ghost", castle: "Winterfell" },
+    { id: 5, name: "Cersei", castle: "Winterfell" },
+    { id: 6, name: "Jaime", castle: "Winterfell" },
+    { id: 7, name: "The Mountain", castle: "Winterfell" },
+    { id: 8, name: "Margery Tyrell", castle: "Winterfell" }
+
 ]
 
 router.get('/new', function (req, res, next) {
@@ -27,30 +21,30 @@ router.post('/', function (req, res, next) {
     res.redirect('/');
 });
 
-router.get('/:id', function (req, res, next) {
-    let foundCastle = castles.filter(castle => castle.id == req.params.id)[0];
-
-    let templateVars = {
-        id: req.params.id,
-        name: foundCastle.name,
-        characters: foundCastle.characters
-    }
-    res.render('character', templateVars);
-});
-
 router.get('/:id/edit', function (req, res, next) {
-    let foundCastle = castles.filter(castle => castle.id == req.params.id)[0];
+    let foundCharacter = characters.filter(character => character.id == req.params.id)[0];
 
     let templateVars = {
         id: req.params.id,
-        name: foundCastle.name,
-        characters: foundCastle.characters
+        name: foundCharacter.name,
+        castle: foundCharacter.castle
     }
     res.render('character_edit', templateVars);
 });
 
+router.get('/:id', function (req, res, next) {
+    let foundCharacter = characters.filter(character => character.id == req.params.id)[0];
+
+    let templateVars = {
+        id: req.params.id,
+        name: foundCharacter.name,
+        castle: foundCharacter.castle
+    }
+    res.render('character', templateVars);
+});
+
 router.post('/:id/edit', function (req, res, next) {
-    res.redirect(`/characters/${req.params.id}`);
+    res.redirect(`/characters/${req.params.id}/edit`);
 });
 
 router.post('/:id/delete', function (req, res, next) {
