@@ -101,5 +101,4 @@ This will automatically sanitize our inputs to prevent SQL from running any inpu
 Notes and lecture influenced by these lecturers:
 
 [Nima Boscarino](https://web.compass.lighthouselabs.ca/activities/42/lectures/2489)
-[Karl Jensen]()
 
