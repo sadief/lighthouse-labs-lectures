@@ -16,9 +16,11 @@
         <div class="container">
             <h2>of <%=castle%></h2>
             <div class="container-items">
-                <a href="/characters/<%=id%>/edit">
-                    <button type="submit">Edit</button>
-                </a>
+                <form>
+                    <a href="/characters/<%=id%>/edit">
+                        <button type="submit">Edit</button>
+                    </a>
+                </form>
                 <form action="/characters/<%=id%>/delete" method="POST">
                     <button type="submit">Delete</button>
                 </form>
