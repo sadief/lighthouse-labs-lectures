@@ -6,10 +6,10 @@ const characters = [
     { id: 2, name: "Arya", castle: "Winterfell" },
     { id: 3, name: "Sansa", castle: "Winterfell" },
     { id: 4, name: "Ghost", castle: "Winterfell" },
-    { id: 5, name: "Cersei", castle: "Winterfell" },
-    { id: 6, name: "Jaime", castle: "Winterfell" },
-    { id: 7, name: "The Mountain", castle: "Winterfell" },
-    { id: 8, name: "Margery Tyrell", castle: "Winterfell" }
+    { id: 5, name: "Cersei", castle: "The Red Keep" },
+    { id: 6, name: "Jaime", castle: "The Red Keep" },
+    { id: 7, name: "The Mountain", castle: "The Red Keep" },
+    { id: 8, name: "Margery Tyrell", castle: "Highgarden" }
 
 ]
 
